@@ -5,297 +5,270 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Legal & Privacy — Tic Tac Toe (Red-F Studios)</title>
 <meta name="description" content="Privacy Policy, Terms of Use, Copyright & Licenses for Tic Tac Toe by Red-F Studios.">
-
 <script src="https://cdn.tailwindcss.com"></script>
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+body { font-family: 'Inter', sans-serif; }
 
-body{font-family:'Inter',sans-serif;}
-
-.legal-section{
-margin-bottom:3rem;
-scroll-margin-top:6rem;
+.legal-section { margin-bottom: 3rem; scroll-margin-top: 6rem; }
+.legal-section h2 { margin-bottom: 1.25rem; }
+.legal-section h3 {
+  margin-top: 1.75rem;
+  margin-bottom: .75rem;
+  font-weight: 600;
+  color: #111827;
 }
-
-.legal-section h2{margin-bottom:1.25rem;}
-
-.legal-section h3{
-margin-top:1.75rem;
-margin-bottom:.75rem;
-font-weight:600;
-color:#111827;
-}
-
 .legal-section p,
-.legal-section li{
-color:#4b5563;
-line-height:1.7;
-margin-bottom:.75rem;
+.legal-section li {
+  color: #4b5563;
+  line-height: 1.7;
+  margin-bottom: .75rem;
+}
+.legal-section ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
-.legal-section ul{
-list-style-type:disc;
-padding-left:1.5rem;
-margin-bottom:1.25rem;
+.toplink {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  background: #1f2937;
+  color: white;
+  padding: .75rem 1rem;
+  border-radius: 9999px;
+  font-size: .875rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-decoration: none;
+  z-index: 50;
+}
+.toplink:hover { background: #374151; }
+
+.banner-placeholder {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 40%, #2a0808 70%, #0a0a0a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.banner-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 40px,
+    rgba(255,255,255,0.02) 40px,
+    rgba(255,255,255,0.02) 41px
+  );
+}
+.banner-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.banner-hex {
+  width: 72px;
+  height: 72px;
+  background: transparent;
+  border: 2.5px solid rgba(255,80,60,0.8);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 800;
+  color: white;
+  background: rgba(255,40,20,0.15);
+}
+.banner-text-wrap { }
+.banner-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+.banner-sub {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 4px;
 }
 
-.toplink{
-position:fixed;
-right:1.5rem;
-bottom:1.5rem;
-background:#1f2937;
-color:white;
-padding:.75rem 1rem;
-border-radius:9999px;
-font-size:.875rem;
-font-weight:500;
-box-shadow:0 4px 12px rgba(0,0,0,0.15);
+@media (max-width: 480px) {
+  .banner-title { font-size: 1.4rem; }
+  .banner-placeholder { height: 160px; }
 }
 </style>
 </head>
 
-<body class="bg-slate-50 text-gray-800 antialiased">
+<body class="bg-slate-100 text-gray-800 antialiased">
 
+<!-- NAV -->
 <nav class="bg-[#0a0a0a] sticky top-0 z-50 border-b border-gray-800">
-<div class="max-w-5xl mx-auto px-6">
-<div class="flex justify-between h-16 items-center">
-
-<div class="flex items-center">
-<img src="logo.png" class="h-10 w-10 rounded-xl mr-3 border border-gray-700 bg-black">
-
-<div>
-<div class="font-bold text-xl text-white">Tic Tac Toe</div>
-<div class="text-xs text-gray-400">by Red-F Studios</div>
-</div>
-</div>
-
-<div class="text-sm text-gray-300 hidden sm:block">
-Legal & Privacy Center
-</div>
-
-</div>
-</div>
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="flex justify-between h-16 items-center">
+      <div class="flex items-center gap-3">
+        <!-- Logo fallback: shows a styled placeholder if logo.png missing -->
+        <div class="h-10 w-10 rounded-xl border border-gray-700 bg-gray-900 flex items-center justify-content-center overflow-hidden flex-shrink-0">
+          <img src="logo.png" class="h-full w-full object-cover rounded-xl"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-weight:800;color:#ef4444;font-size:14px;">T</div>
+        </div>
+        <div>
+          <div class="font-bold text-xl text-white leading-tight">Tic Tac Toe</div>
+          <div class="text-xs text-gray-400">by Red-F Studios</div>
+        </div>
+      </div>
+      <div class="text-sm text-gray-300 hidden sm:block">Legal & Privacy Center</div>
+    </div>
+  </div>
 </nav>
 
+<!-- BANNER -->
 <div class="w-full bg-black">
-<div class="max-w-5xl mx-auto">
-<img src="banner.jpg" class="w-full h-48 sm:h-64 object-cover opacity-90">
-</div>
-</div>
-
-<main class="max-w-5xl mx-auto px-6 py-10 bg-white shadow-xl -mt-12 rounded-t-xl min-h-screen">
-
-<div class="text-center mb-10 border-b pb-8">
-
-<h1 class="text-3xl font-extrabold text-gray-900 mb-3">
-Legal Information
-</h1>
-
-<p class="text-gray-500">
-Privacy Policy, Terms of Use, Copyright & Licenses for Tic Tac Toe.
-</p>
-
-<p class="text-sm text-gray-400 mt-3">
-Last Updated: March 7, 2026
-</p>
-
+  <div class="max-w-5xl mx-auto">
+    <!-- Uses banner.jpg if available, falls back to CSS banner -->
+    <div class="relative">
+      <img src="banner.jpg"
+           class="w-full h-48 sm:h-64 object-cover opacity-90"
+           onerror="this.style.display='none'; document.getElementById('banner-fallback').style.display='flex'">
+      <div id="banner-fallback" class="banner-placeholder" style="display:none;">
+        <div class="banner-inner">
+          <div class="banner-hex">F</div>
+          <div class="banner-text-wrap">
+            <div class="banner-title">Red-F Studios</div>
+            <div class="banner-sub">Your Apps. Redefined.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="mb-12 flex flex-wrap justify-center gap-3">
+<!-- MAIN CARD -->
+<main class="max-w-5xl mx-auto px-4 sm:px-6 bg-white shadow-xl rounded-t-2xl -mt-6 relative z-10 min-h-screen">
 
-<a href="#privacy" class="px-4 py-2 border rounded-full text-sm hover:bg-gray-50">
-Privacy Policy
-</a>
+  <!-- HEADER -->
+  <div class="text-center pt-10 pb-8 border-b border-gray-100">
+    <h1 class="text-3xl font-extrabold text-gray-900 mb-3">Legal Information</h1>
+    <p class="text-gray-500">Privacy Policy, Terms of Use, Copyright & Licenses for Tic Tac Toe.</p>
+    <p class="text-sm text-gray-400 mt-2">Last Updated: March 7, 2026</p>
+  </div>
 
-<a href="#terms" class="px-4 py-2 border rounded-full text-sm hover:bg-gray-50">
-Terms of Use
-</a>
+  <!-- NAV PILLS -->
+  <div class="py-8 flex flex-wrap justify-center gap-3">
+    <a href="#privacy"   class="px-4 py-2 border border-gray-200 rounded-full text-sm hover:bg-gray-50 transition-colors">Privacy Policy</a>
+    <a href="#terms"     class="px-4 py-2 border border-gray-200 rounded-full text-sm hover:bg-gray-50 transition-colors">Terms of Use</a>
+    <a href="#copyright" class="px-4 py-2 border border-gray-200 rounded-full text-sm hover:bg-gray-50 transition-colors">Copyright</a>
+    <a href="#licenses"  class="px-4 py-2 border border-gray-200 rounded-full text-sm hover:bg-gray-50 transition-colors">Licenses</a>
+  </div>
 
-<a href="#copyright" class="px-4 py-2 border rounded-full text-sm hover:bg-gray-50">
-Copyright
-</a>
+  <div class="pb-16">
 
-<a href="#licenses" class="px-4 py-2 border rounded-full text-sm hover:bg-gray-50">
-Licenses
-</a>
+    <!-- 1. PRIVACY -->
+    <section id="privacy" class="legal-section">
+      <h2 class="text-2xl font-bold text-gray-900">1. Privacy Policy</h2>
+      <p>Tic Tac Toe is a free mobile game developed and published by Red-F Studios. This Privacy Policy explains how information may be collected and used when you use the app.</p>
 
-</div>
+      <h3>Information Collection</h3>
+      <p>The app does not require account creation and does not directly collect personal information such as your name, email address, or phone number.</p>
+      <p>However, the app displays advertisements using third-party advertising services such as Google AdMob. These services may automatically collect certain information in order to display ads and measure ad performance.</p>
+      <ul>
+        <li>Approximate location derived from IP address</li>
+        <li>Device identifiers such as Android Advertising ID</li>
+        <li>Ad interaction data such as views and clicks</li>
+        <li>Device diagnostics and performance data</li>
+      </ul>
+      <p>Red-F Studios does not directly access or store this information. Data collected by advertising providers is processed according to their own privacy policies.</p>
 
-<section id="privacy" class="legal-section">
+      <h3>Third-Party Services</h3>
+      <p>This app integrates third-party services including Google Play Services and Google AdMob. These services may collect information used to provide advertising and maintain service reliability.</p>
 
-<h2 class="text-2xl font-bold text-gray-900">1. Privacy Policy</h2>
+      <h3>Log Data</h3>
+      <p>In the event of a crash or technical issue, diagnostic information may be automatically collected by third-party services. This may include device model, operating system version, and timestamps.</p>
 
-<p>
-Tic Tac Toe is a free mobile game developed and published by Red-F Studios. 
-This Privacy Policy explains how information may be collected and used when you use the app.
-</p>
+      <h3>Children's Privacy</h3>
+      <p>The app is designed for a general audience and does not knowingly collect personal information from children.</p>
 
-<h3>Information Collection</h3>
+      <h3>Changes to This Policy</h3>
+      <p>We may update this Privacy Policy periodically. Updates will be posted on this page and become effective immediately after posting.</p>
 
-<p>
-The app does not require account creation and does not directly collect personal information such as your name, email address, or phone number.
-</p>
+      <h3>Contact</h3>
+      <p>For privacy questions contact:<br>
+        <a href="mailto:redfstudio.apps@gmail.com" class="text-indigo-600 hover:underline">redfstudio.apps@gmail.com</a>
+      </p>
+    </section>
 
-<p>
-However, the app displays advertisements using third-party advertising services such as Google AdMob. These services may automatically collect certain information in order to display ads and measure ad performance.
-</p>
+    <hr class="my-10 border-gray-100">
 
-<ul>
-<li>Approximate location derived from IP address</li>
-<li>Device identifiers such as Android Advertising ID</li>
-<li>Ad interaction data such as views and clicks</li>
-<li>Device diagnostics and performance data</li>
-</ul>
+    <!-- 2. TERMS -->
+    <section id="terms" class="legal-section">
+      <h2 class="text-2xl font-bold text-gray-900">2. Terms of Use</h2>
 
-<p>
-Red-F Studios does not directly access or store this information. Data collected by advertising providers is processed according to their own privacy policies.
-</p>
+      <h3>Acceptance</h3>
+      <p>By downloading or using Tic Tac Toe you agree to these Terms of Use. If you do not agree with these terms, please discontinue use of the app.</p>
 
-<h3>Third-Party Services</h3>
+      <h3>License</h3>
+      <p>Red-F Studios grants you a limited, non-exclusive, non-transferable license to use the app for personal and non-commercial entertainment purposes.</p>
 
-<p>
-This app integrates third-party services including Google Play Services and Google AdMob.
-These services may collect information used to provide advertising and maintain service reliability.
-</p>
+      <h3>Restrictions</h3>
+      <ul>
+        <li>You may not reverse engineer or attempt to extract the source code</li>
+        <li>You may not modify or redistribute the app</li>
+        <li>You may not use the app for unlawful purposes</li>
+      </ul>
 
-<h3>Log Data</h3>
+      <h3>Advertisements</h3>
+      <p>The app displays advertisements provided by third-party ad networks. Red-F Studios does not control the content of advertisements shown in the app.</p>
 
-<p>
-In the event of a crash or technical issue, diagnostic information may be automatically collected by third-party services. This may include device model, operating system version, and timestamps.
-</p>
+      <h3>Disclaimer</h3>
+      <p>The app is provided "as is" without warranties of any kind. Red-F Studios does not guarantee that the app will be error-free or uninterrupted.</p>
 
-<h3>Children's Privacy</h3>
+      <h3>Limitation of Liability</h3>
+      <p>To the maximum extent permitted by law, Red-F Studios shall not be liable for any damages arising from the use or inability to use the app.</p>
 
-<p>
-The app is designed for a general audience and does not knowingly collect personal information from children.
-</p>
+      <h3>Contact</h3>
+      <p>For questions about these Terms contact:<br>
+        <a href="mailto:redfstudio.apps@gmail.com" class="text-indigo-600 hover:underline">redfstudio.apps@gmail.com</a>
+      </p>
+    </section>
 
-<h3>Changes to This Policy</h3>
+    <hr class="my-10 border-gray-100">
 
-<p>
-We may update this Privacy Policy periodically. Updates will be posted on this page and become effective immediately after posting.
-</p>
+    <!-- 3. COPYRIGHT -->
+    <section id="copyright" class="legal-section">
+      <h2 class="text-2xl font-bold text-gray-900">3. Copyright</h2>
+      <p>All content included in Tic Tac Toe including software, graphics, design, and branding are the property of Red-F Studios and are protected by copyright and intellectual property laws.</p>
+      <p>Unauthorized reproduction or redistribution of the app or its assets is prohibited.</p>
+    </section>
 
-<h3>Contact</h3>
+    <hr class="my-10 border-gray-100">
 
-<p>
-For privacy questions contact:
-<br>
-<a href="mailto:redfstudio.apps@gmail.com" class="text-indigo-600 hover:underline">
-redfstudio.apps@gmail.com
-</a>
-</p>
+    <!-- 4. LICENSES -->
+    <section id="licenses" class="legal-section">
+      <h2 class="text-2xl font-bold text-gray-900">4. Open Source Licenses</h2>
+      <p>Tic Tac Toe may include open-source libraries from the Flutter and Dart ecosystem.</p>
+      <p>A complete list of open-source packages and their licenses can be viewed inside the app under:</p>
+      <p class="font-medium text-gray-800">Settings → About → Licenses</p>
+    </section>
 
-</section>
+  </div>
 
-<hr class="my-10">
-
-<section id="terms" class="legal-section">
-
-<h2 class="text-2xl font-bold text-gray-900">2. Terms of Use</h2>
-
-<h3>Acceptance</h3>
-
-<p>
-By downloading or using Tic Tac Toe you agree to these Terms of Use. If you do not agree with these terms, please discontinue use of the app.
-</p>
-
-<h3>License</h3>
-
-<p>
-Red-F Studios grants you a limited, non-exclusive, non-transferable license to use the app for personal and non-commercial entertainment purposes.
-</p>
-
-<h3>Restrictions</h3>
-
-<ul>
-<li>You may not reverse engineer or attempt to extract the source code</li>
-<li>You may not modify or redistribute the app</li>
-<li>You may not use the app for unlawful purposes</li>
-</ul>
-
-<h3>Advertisements</h3>
-
-<p>
-The app displays advertisements provided by third-party ad networks. Red-F Studios does not control the content of advertisements shown in the app.
-</p>
-
-<h3>Disclaimer</h3>
-
-<p>
-The app is provided "as is" without warranties of any kind. Red-F Studios does not guarantee that the app will be error-free or uninterrupted.
-</p>
-
-<h3>Limitation of Liability</h3>
-
-<p>
-To the maximum extent permitted by law, Red-F Studios shall not be liable for any damages arising from the use or inability to use the app.
-</p>
-
-<h3>Contact</h3>
-
-<p>
-For questions about these Terms contact:
-<br>
-<a href="mailto:redfstudio.apps@gmail.com" class="text-indigo-600 hover:underline">
-redfstudio.apps@gmail.com
-</a>
-</p>
-
-</section>
-
-<hr class="my-10">
-
-<section id="copyright" class="legal-section">
-
-<h2 class="text-2xl font-bold text-gray-900">3. Copyright</h2>
-
-<p>
-All content included in Tic Tac Toe including software, graphics, design, and branding are the property of Red-F Studios and are protected by copyright and intellectual property laws.
-</p>
-
-<p>
-Unauthorized reproduction or redistribution of the app or its assets is prohibited.
-</p>
-
-</section>
-
-<hr class="my-10">
-
-<section id="licenses" class="legal-section">
-
-<h2 class="text-2xl font-bold text-gray-900">4. Open Source Licenses</h2>
-
-<p>
-Tic Tac Toe may include open-source libraries from the Flutter and Dart ecosystem.
-</p>
-
-<p>
-A complete list of open-source packages and their licenses can be viewed inside the app under:
-</p>
-
-<p class="font-medium">
-Settings → About → Licenses
-</p>
-
-</section>
-
-<footer class="mt-16 pt-10 border-t text-center pb-8">
-
-<p class="text-gray-600 mb-4">
-Red-F Studios
-</p>
-
-<a href="mailto:redfstudio.apps@gmail.com" class="text-indigo-600 hover:underline">
-redfstudio.apps@gmail.com
-</a>
-
-<p class="mt-8 text-xs text-gray-400">
-© 2026 Red-F Studios. All rights reserved.
-</p>
-
-</footer>
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-100 text-center py-10">
+    <p class="text-gray-600 mb-2 font-medium">Red-F Studios</p>
+    <a href="mailto:redfstudio.apps@gmail.com" class="text-indigo-600 hover:underline text-sm">redfstudio.apps@gmail.com</a>
+    <p class="mt-6 text-xs text-gray-400">© 2026 Red-F Studios. All rights reserved.</p>
+  </footer>
 
 </main>
 
